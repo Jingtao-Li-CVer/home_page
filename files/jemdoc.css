@@ -6,7 +6,7 @@ span.tag {
   font-size: 12px;
   color: #FFFFFF;
   /* color: #07889b; */
-  background-color: #0076DF;
+  background-color: #008080;
   box-shadow: 2px 2px 1px #E0E0E0;
   padding: 1px 5px 2px 5px;
   @media (max-width: 500px) {
@@ -16,7 +16,7 @@ span.tag {
 
 .menu {
 	/* background-color: #527bbd; #224b8d 33BBFF*/
-	background-color: #527bbd;
+	background-color: #008080;
     left: 0;
     top: 0;
     width: 100%;
