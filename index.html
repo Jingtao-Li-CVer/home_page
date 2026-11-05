@@ -6,8 +6,34 @@
 <link rel="stylesheet" href="files/jemdoc.css" type="text/css" />
 <link rel="icon" href="./img/home_img.jpg">
 <title>Jingtao Li - WHU</title>
+<style>
+.zh{display:none}
+html.lang-zh .zh{display:inline}
+#langswitch{position:fixed;top:8px;right:16px;font-size:14px;z-index:10;background:rgba(255,255,255,.9);padding:2px 8px;border-radius:4px}
+#langswitch a{text-decoration:none;color:#1772d0;cursor:pointer}
+#langswitch a.active{font-weight:bold;color:#424949}
+</style>
+<script>
+(function(){var l='en';try{var q=location.search.match(/[?&]lang=(en|zh)/);l=q?q[1]:(localStorage.getItem('lang')||'en');}catch(e){}
+if(l==='zh')document.documentElement.className+=' lang-zh';})();
+</script>
 </head>
 <body>
+<div id="langswitch"><a id="lang-en">EN</a> | <a id="lang-zh">中文</a></div>
+<script>
+(function(){
+  var root=document.documentElement;
+  function apply(l){
+    root.classList.toggle('lang-zh',l==='zh');
+    document.getElementById('lang-en').className=l==='zh'?'':'active';
+    document.getElementById('lang-zh').className=l==='zh'?'active':'';
+    try{localStorage.setItem('lang',l);}catch(e){}
+  }
+  document.getElementById('lang-en').onclick=function(){apply('en');};
+  document.getElementById('lang-zh').onclick=function(){apply('zh');};
+  apply(root.classList.contains('lang-zh')?'zh':'en');
+})();
+</script>
 
 <!-- <div class="menu"> <a href="#home">Home</a>
 <a href="#education">Experience</a>
@@ -21,14 +47,14 @@
 <div id="container">
 <div class="container">
 <div id="toptitle">
-<h1>Jingtao Li&nbsp;&nbsp;李静涛</h1>
+<h1>Jingtao Li<span class="zh">&nbsp;&nbsp;李静涛</span></h1>
 </div>
 
 <table class="imgtable"><tr><td>
 <a href="./"><img src="./img/head.jpg" alt="" height="240px" width="180px"/></a>&nbsp;</td>
 <td align="left"><p><font color="#424949" size="4"><b>Research Associate at University of Cambridge</b></font><br><br>
 
-Email: jingtaoli@whu.edu.cn; jingtaoli-cver@outlook.com
+Email: jl2692@cam.ac.uk
 <br><br>
 <a href="https://www.cam.ac.uk" target="_blank">University of Cambridge</a><br>
 <a href="https://www.cst.cam.ac.uk/research/eeg" target="_blank">Energy and Environment Group, Department of Computer Science and Technology</a><br>
@@ -46,13 +72,17 @@ Email: jingtaoli@whu.edu.cn; jingtaoli-cver@outlook.com
 
 <h2>Biography</h2>
 <p> 
-    I am currently a Postdoc at University of Cambridge in <a href="https://www.cst.cam.ac.uk/research/eeg" target="_blank"><font color="#1772d0">Energy and Environment Group (EEG)</font></a>, led by Prof. <a href="https://svr-sk818-web.cl.cam.ac.uk/keshav/wiki/index.php/Main_Page" target="_blank"><font color="#1772d0">Srinivasan Keshav</font></a>. Before that, I obtained PhD degree at Wuhan University, supervised by <a href="http://rsidea.whu.edu.cn/" target="_blank"><font color="#1772d0">Yanfei Zhong </font></a> and <a href="https://www.zhangliangpei.cn" target="_blank"><font color="#1772d0">Liangpei Zhang</font></a>.
-    My research interest is in Earth Vision Interpreting, especially anomaly detection and foundation model technique for remote sensing imagery. My research goal is to build insightful and original technologies for efficient remote sensing processing, protecting the environment and social security for human. My research taste likes zero-shot and open-world settings. 
+    I am a Postdoctoral Research Associate at the University of Cambridge, in the <a href="https://www.cst.cam.ac.uk/research/eeg" target="_blank"><font color="#1772d0">Energy and Environment Group (EEG)</font></a> led by Prof. <a href="https://svr-sk818-web.cl.cam.ac.uk/keshav/wiki/index.php/Main_Page" target="_blank"><font color="#1772d0">Srinivasan Keshav</font></a>. I received my Ph.D. from Wuhan University, where I was supervised by Prof. <a href="http://rsidea.whu.edu.cn/" target="_blank"><font color="#1772d0">Yanfei Zhong</font></a> and Prof. <a href="https://www.zhangliangpei.cn" target="_blank"><font color="#1772d0">Liangpei Zhang</font></a>.
+    My current research focuses on generating and forecasting Earth embeddings with foundation models, to understand how the Earth's surface changes over time. Previously, I worked on anomaly detection for remote sensing imagery, from detecting surface anomalies to building zero-shot and open-world detectors. I aim to develop principled and original methods that make Earth observation more efficient and scalable, supporting environmental protection and societal resilience.
 </p>
 
 <h2>News</h2>
 <!-- <div style="height: 240px; overflow-y: auto; overflow-x: hidden;">  使用窗口滑动显示，浏览器容易不兼容  -->
 <ul>
+<li><font color="black">(11/2026)</font> One paper <a href="https://arxiv.org/abs/2611.02211" target="_blank">Forecasting Earth Surface Change in Embedding Space</a> has been released on <b>arXiv</b>. The <a href="https://github.com/ucam-eo/e2forecast" target="_blank">code</a> and <a href="https://huggingface.co/datasets/JingtaoLi/E2Forecast-data" target="_blank">data</a> are publicly available.
+</li>
+<li><font color="black">(09/2026)</font> One paper <a href="https://arxiv.org/abs/2609.20662" target="_blank">Earth Surface Immune System for Rapid Monitoring of Unknown Anomalies</a> has been released on <b>arXiv</b>.
+</li>
 <li><font color="black">(10/2026)</font> I co-organized <a href="https://meetingorganizer.copernicus.org/EGU27/session/61703" target="_blank">EGU 2027 session</a> Geospatial Foundation Models for Earth Observation and Earth Sciences: From Foundations to Applications.
 </li>
 <li><font color="black">(07/2026)</font> I co-organized <a href="https://www.codabench.org/competitions/17617/?secret_key=0c2cdc73-9570-4825-b79b-e2394c666129" target="_blank">the Second Hyperspectral Remote Sensing Data Processing and Application Competition.</a>
@@ -60,18 +90,18 @@ Email: jingtaoli@whu.edu.cn; jingtaoli-cver@outlook.com
 <li><font color="black">(04/2026)</font> One paper <a href= "./attaches/AnomalyCD.pdf" target="_blank"> Unsupervised Anomaly Localization with High-resolution and Time-series Satellite Imagery: from Global Disaster Dataset to Zero-shot Model via SAM
 </a> has been accepted by <b>ISPRS</b>.</font> 
        </li>
-<li><font color="black">(1/2026)</font> I won the first prize of Wang Zhizhuo Scholarship for Innovative Talents. | 🎉 <font color="#DA1212">王之卓创新人才一等奖学金</font> 
+<li><font color="black">(1/2026)</font> I won the first prize of Wang Zhizhuo Scholarship for Innovative Talents.<span class="zh"> | 🎉 <font color="#DA1212">王之卓创新人才一等奖学金</font></span> 
        </li>
-<li><font color="black">(11/2025)</font> I won the first prize of academic innovation of Wuhan University. | 🎉 <font color="#DA1212">武汉大学学术创新一等奖学金</font> 
+<li><font color="black">(11/2025)</font> I won the first prize of academic innovation of Wuhan University.<span class="zh"> | 🎉 <font color="#DA1212">武汉大学学术创新一等奖学金</font></span> 
        </li>
 <li><font color="black">(02/2025)</font> One paper <a href="https://rsidea.whu.edu.cn/HyperFree.pdf" target="_blank"> HyperFree: A Channel-adaptive and Tuning-free Foundation Model for Hyperspectral Remote Sensing Imagery</a> has been accepted by <b>CVPR 2025</b>.</font> 
        </li>
-<li><font color="black">(01/2025)</font> I was supported by China Association for Science and Technology youth talent lifting project. | 🎉 <font color="#DA1212">获批2024中国科协青托博士生专项</font> 
+<li><font color="black">(01/2025)</font> I was supported by China Association for Science and Technology youth talent lifting project.<span class="zh"> | 🎉 <font color="#DA1212">获批2024中国科协青托博士生专项</font></span> 
        </li>
 <li><font color="black">(12/2024)</font> The code of <a href="https://github.com/Jingtao-Li-CVer/UniADRS" target="_blank">
         UniADRS zero-shot detector</a> has been released.</li>
 <li><font color="black">(12/2024)</font> I made <b>an oral presentaion</b> at the <a href="https://www.ieee-whispers.com/" target="_blank">Whisper 2024 conference</a> in Helsinki Finland.</li>
-<li><font color="black">(11/2024)</font> I was supported by the <b>Basic Research Fund for Young Students of NSFC</b> | 🎉 <font color="#DA1212">获批2024国自然博士生基金</font> 
+<li><font color="black">(11/2024)</font> I was supported by the <b>Basic Research Fund for Young Students of NSFC</b><span class="zh"> | 🎉 <font color="#DA1212">获批2024国自然博士生基金</font></span> 
         <a href="http://rsidea.whu.edu.cn/2024-22.htm" target="_blank">[News Link]</a></li>
 <li><font color="black">(10/2024)</font> One paper <a href="https://ieeexplore.ieee.org/document/10747828" target="_blank">
     Learning a Cross-modality Anomaly Detector for Remote Sensing Imagery</a> has been accepted by <b>IEEE TIP</b>.</li>
@@ -121,6 +151,36 @@ jasif=15.3;
 <!-- <h3><li>Journal:</li></h3>  -->
 <br>
 <table class="imgtable">
+
+<tr>
+<td><img class="proj_thumb" src="./papers/E2Forecast.jpg" alt="" height="100px"/>&nbsp;</td>
+<td>
+<p class="pub_title"><a href= "https://arxiv.org/abs/2611.02211" target="_blank">
+<b>Forecasting Earth Surface Change in Embedding Space</b></a></p>
+<p class="pub_author"><b>Jingtao Li</b>, Sadiq Jaffer, Anil Madhavapeddy, Pedro Sousa, Anthony Ortiz, Kyle Gao, Zhengpeng Feng, Yanfei Zhong, Kevin White, Srinivasan Keshav<br>
+arXiv preprint arXiv:2611.02211, 2026<br>
+[<a href= "https://arxiv.org/pdf/2611.02211" target="_blank">PDF</a>] 
+[<a href="https://github.com/ucam-eo/e2forecast" target="_blank">Code</a>]  
+[<a href="https://huggingface.co/datasets/JingtaoLi/E2Forecast-data" target="_blank">Data</a>]  
+</p>
+</p>
+<br>
+</td>
+</tr>
+
+<tr>
+<td><img class="proj_thumb" src="./papers/ESIA.jpg" alt="" height="100px"/>&nbsp;</td>
+<td>
+<p class="pub_title"><a href= "https://arxiv.org/abs/2609.20662" target="_blank">
+<b>Earth Surface Immune System for Rapid Monitoring of Unknown Anomalies</b></a></p>
+<p class="pub_author"><b>Jingtao Li</b>, Qian Zhu, Xinyu Wang, Deren Li, Liangpei Zhang, Yanfei Zhong<br>
+arXiv preprint arXiv:2609.20662, 2026<br>
+[<a href= "https://arxiv.org/pdf/2609.20662" target="_blank">PDF</a>] 
+</p>
+</p>
+<br>
+</td>
+</tr>
 
 <tr>
 <td><img class="proj_thumb" src="./papers/AnomalyCD.jpg" alt="" height="100px"/>&nbsp;</td>
@@ -308,20 +368,21 @@ IEEE Transactions on Geoscience and Remote Sensing (<b>IEEE TGRS</b>), 2024<br>
 <a id="awards" class="anchor"></a>
 <h2>Awards and Honors</h2>
 <ul>
-<li><font color="#DA1212">2026:</font> First prize of Wang Zhizhuo Scholarship for Innovative Talents, WHU | 王之卓创新人才一等奖学金</li>
-<li><font color="#DA1212">2025:</font> First-class Academic Innovation Scholarship, WHU | 武汉大学学术创新一等奖学金</li>
-<li><font color="#DA1212">2025:</font> "Top Ten Academic Star" Finalist Award (20 persons), WHU | 武汉大学“十大学术之星”入围奖（20人）</li>
-<li><font color="#DA1212">2023:</font> First Prize of Campus Artificial Intelligence Algorithm Competition, Graduate Group, China | 全国校园人工智能算法精英赛研究生组第1名</li>
-<li><font color="#DA1212">2021:</font> First Prize of Open Data Innovation Application Competition, Zhuhai, China | 广州珠海开放数据创新应用大赛第1名</li>
-<li><font color="#DA1212">2024:</font> Third Prize of Agriculture-Vision: Challenges, CVPR | CVPR农业视觉竞赛季军</li>
-<li><font color="#DA1212">2023:</font> Excellent Paper Presentation Award, 7th CWHEO | 全国成像光谱学术研讨会优秀报告奖</li>
-<li><font color="#DA1212">2024:</font> Third Prize of the Hyperspectral Classification Challenge, 8th CWHEO | 全国成像光谱学术研讨会高光谱分类赛道三等奖</li>
-<li><font color="#DA1212">2023:</font> Rank 4th of Yangtze River Artificial Intelligence Vision Competition, Anhui, China | 长三角人工智能视觉大赛第4</li>
-<li><font color="#DA1212">2023:</font> Third Prize of National Digital Ecosystem Innovation Competition, TIANCHI, Alibaba | 全国数字生态创新大赛智能算法赛第3</li>
-<li><font color="#DA1212">2023:</font> Rank 6th of International High-resolution Remote Sensing Image Interpretation Competition, IEEE GRSS&ISPRS | 国际高分遥感图像解译大赛第6</li>
-<li><font color="#DA1212">2022:</font> National Scholarship, WHU | 武汉大学研究生国家奖学金</li>
-<li><font color="#DA1212">2021:</font> Outstanding Master's Degree Scholarship, WHU | 武汉大学优秀硕士新生奖学金</li>
-<li><font color="#DA1212">2021:</font> President's Scholarship, CUG | 中国地质大学（武汉）校长奖学金</li>
+<li><font color="#DA1212">2026:</font> Finalist Award for Doctoral Dissertation, IEEE Geoscience and Remote Sensing Society (GRSS)<span class="zh"> | 博士学位论文荣获IEEE Geoscience and Remote Sensing Society Finalist Award</span></li>
+<li><font color="#DA1212">2026:</font> First prize of Wang Zhizhuo Scholarship for Innovative Talents, WHU<span class="zh"> | 王之卓创新人才一等奖学金</span></li>
+<li><font color="#DA1212">2025:</font> First-class Academic Innovation Scholarship, WHU<span class="zh"> | 武汉大学学术创新一等奖学金</span></li>
+<li><font color="#DA1212">2025:</font> "Top Ten Academic Star" Finalist Award (20 persons), WHU<span class="zh"> | 武汉大学“十大学术之星”入围奖（20人）</span></li>
+<li><font color="#DA1212">2023:</font> First Prize of Campus Artificial Intelligence Algorithm Competition, Graduate Group, China<span class="zh"> | 全国校园人工智能算法精英赛研究生组第1名</span></li>
+<li><font color="#DA1212">2021:</font> First Prize of Open Data Innovation Application Competition, Zhuhai, China<span class="zh"> | 广州珠海开放数据创新应用大赛第1名</span></li>
+<li><font color="#DA1212">2024:</font> Third Prize of Agriculture-Vision: Challenges, CVPR<span class="zh"> | CVPR农业视觉竞赛季军</span></li>
+<li><font color="#DA1212">2023:</font> Excellent Paper Presentation Award, 7th CWHEO<span class="zh"> | 全国成像光谱学术研讨会优秀报告奖</span></li>
+<li><font color="#DA1212">2024:</font> Third Prize of the Hyperspectral Classification Challenge, 8th CWHEO<span class="zh"> | 全国成像光谱学术研讨会高光谱分类赛道三等奖</span></li>
+<li><font color="#DA1212">2023:</font> Rank 4th of Yangtze River Artificial Intelligence Vision Competition, Anhui, China<span class="zh"> | 长三角人工智能视觉大赛第4</span></li>
+<li><font color="#DA1212">2023:</font> Third Prize of National Digital Ecosystem Innovation Competition, TIANCHI, Alibaba<span class="zh"> | 全国数字生态创新大赛智能算法赛第3</span></li>
+<li><font color="#DA1212">2023:</font> Rank 6th of International High-resolution Remote Sensing Image Interpretation Competition, IEEE GRSS&ISPRS<span class="zh"> | 国际高分遥感图像解译大赛第6</span></li>
+<li><font color="#DA1212">2022:</font> National Scholarship, WHU<span class="zh"> | 武汉大学研究生国家奖学金</span></li>
+<li><font color="#DA1212">2021:</font> Outstanding Master's Degree Scholarship, WHU<span class="zh"> | 武汉大学优秀硕士新生奖学金</span></li>
+<li><font color="#DA1212">2021:</font> President's Scholarship, CUG<span class="zh"> | 中国地质大学（武汉）校长奖学金</span></li>
 </ul>
 
 <a id="talks" class="anchor"></a>
